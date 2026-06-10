@@ -1,0 +1,43 @@
+.footer {
+  background: #0f172a;
+  padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 4rem;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info {
+  text-align: center;
+}
+
+.name {
+  font-size: 1.5rem;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.contact {
+  color: rgba(248, 250, 252, 0.7);
+  line-height: 1.8;
+}
+
+.contact a {
+  color: var(--primary);
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  text-align: center;
+  color: rgba(248, 250, 252, 0.5);
+  font-size: 0.875rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
