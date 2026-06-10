@@ -45,7 +45,7 @@ const itemVariants = {
     x: 0,
     transition: { type: "spring", stiffness: 100 }
   }
-};
+} as const;
 
 export default function Contact() {
   return (
