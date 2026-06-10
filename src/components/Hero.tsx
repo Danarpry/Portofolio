@@ -4,6 +4,19 @@ import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import styles from './Hero.module.css';
 
+const dropdownVariants = {
+  open: { 
+    opacity: 1, 
+    y: 0,
+    display: "flex"
+  },
+  closed: { 
+    opacity: 0, 
+    y: 10,
+    transitionEnd: { display: "none" }
+  }
+} as const;
+
 export default function Hero() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -80,25 +93,23 @@ export default function Hero() {
                 <span className={styles.dropdownArrow}>{isDropdownOpen ? '▲' : '▼'}</span>
               </button>
               
-              {isDropdownOpen && (
-                <motion.div 
-                  className={styles.dropdownMenu}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <a href="/assets/cv/CV_Danar_Priyo_Utomo.pdf" download="CV_Danar_Priyo_Utomo.pdf" className={styles.dropdownItem} onClick={() => setTimeout(() => setIsDropdownOpen(false), 200)}>
-                    CV
-                  </a>
-                  <a href="/assets/cv/professional.pdf" download="professional.pdf" className={styles.dropdownItem} onClick={() => setTimeout(() => setIsDropdownOpen(false), 200)}>
-                    Professional Portfolio
-                  </a>
-                  <a href="/assets/cv/personal.pdf" download="personal.pdf" className={styles.dropdownItem} onClick={() => setTimeout(() => setIsDropdownOpen(false), 200)}>
-                    Personal Portfolio
-                  </a>
-                </motion.div>
-              )}
+              <motion.div 
+                className={styles.dropdownMenu}
+                variants={dropdownVariants}
+                initial="closed"
+                animate={isDropdownOpen ? 'open' : 'closed'}
+                transition={{ duration: 0.2 }}
+              >
+                <a href="/assets/cv/CV_Danar_Priyo_Utomo.pdf" download="CV_Danar_Priyo_Utomo.pdf" className={styles.dropdownItem} onClick={() => setTimeout(() => setIsDropdownOpen(false), 200)}>
+                  CV
+                </a>
+                <a href="/assets/cv/professional.pdf" download="professional.pdf" className={styles.dropdownItem} onClick={() => setTimeout(() => setIsDropdownOpen(false), 200)}>
+                  Professional Portfolio
+                </a>
+                <a href="/assets/cv/personal.pdf" download="personal.pdf" className={styles.dropdownItem} onClick={() => setTimeout(() => setIsDropdownOpen(false), 200)}>
+                  Personal Portfolio
+                </a>
+              </motion.div>
             </div>
 
             <a href="https://github.com/danarpry" target="_blank" rel="noreferrer" className="btn btn-outline">
