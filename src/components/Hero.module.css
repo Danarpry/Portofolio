@@ -82,7 +82,7 @@
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .dropdownItem {
