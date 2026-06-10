@@ -35,7 +35,7 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            Hello, I'm
+            Hello, I am
           </motion.h2>
           <motion.h1 
             className={styles.name}
