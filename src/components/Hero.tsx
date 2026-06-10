@@ -88,13 +88,13 @@ export default function Hero() {
                   exit={{ opacity: 0, y: 10 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <a href="/api/download?file=cv" download className={styles.dropdownItem} onClick={() => setTimeout(() => setIsDropdownOpen(false), 200)}>
+                  <a href="/assets/cv/CV_Danar_Priyo_Utomo.pdf" download="CV_Danar_Priyo_Utomo.pdf" className={styles.dropdownItem} onClick={() => setTimeout(() => setIsDropdownOpen(false), 200)}>
                     CV
                   </a>
-                  <a href="/api/download?file=professional" download className={styles.dropdownItem} onClick={() => setTimeout(() => setIsDropdownOpen(false), 200)}>
+                  <a href="/assets/cv/professional.pdf" download="professional.pdf" className={styles.dropdownItem} onClick={() => setTimeout(() => setIsDropdownOpen(false), 200)}>
                     Professional Portfolio
                   </a>
-                  <a href="/api/download?file=personal" download className={styles.dropdownItem} onClick={() => setTimeout(() => setIsDropdownOpen(false), 200)}>
+                  <a href="/assets/cv/personal.pdf" download="personal.pdf" className={styles.dropdownItem} onClick={() => setTimeout(() => setIsDropdownOpen(false), 200)}>
                     Personal Portfolio
                   </a>
                 </motion.div>
